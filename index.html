@@ -4,33 +4,55 @@
 
 <body>
 
+  <style>
+
+body {background-color: powderblue;}
+
+  </style>
+
   <button onclick="myFunction()">click me for more cookies</button>
 
-  <input type="button" value="+1 clicking power (10)" onclick="otherOne()" id="currentValue()"></input>
+  <input border-radius=12px type="button" value="+1 clicking power (10)" onclick="otherOne()" id="currentValue()"></input>
 
-  <p id="clicks">0 cookies</p>
-
-
+  <font color="red"><p color="green"id="clicks">0 cookies</p></font>
 
 
   <script>
   var increment = 1;
   var cookies = 0;
   var cost = 10;
-  var otherIncrement = 3
+  var otherIncrement = 3;
+
+
 
   function myFunction() {
+
     cookies += increment;
+
     document.getElementById("clicks").innerHTML=cookies + " cookies";
-  }
+
+}
+
+
 
   function otherOne() {
+
     if(cost >= 40) {
-
-  otherIncrement = 10;
-
-
+      otherIncrement = 10;
     }
+    if(cost >= 140) {
+      otherIncrement = 30;
+    }
+    if(cost >= 400) {
+      otherIncrement = 111;
+    }
+    if(cost >= 1000) {
+      otherIncrement = 333;
+    }
+    if(cost >= 1000) {
+      otherIncrement = 666;
+    }
+
     if(cookies >=cost) {
       cookies -=cost;
       increment += 1;
