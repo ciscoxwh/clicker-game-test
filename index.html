@@ -6,9 +6,9 @@
 
   <button onclick="myFunction()">click me for more cookies</button>
 
-  <input type="button" value=cost id="currentValue()"></input>
+  <input type="button" value="+1 clicking power (10)" onclick="otherOne()" id="currentValue()"></input>
 
-  <p id="clicks">0</p>
+  <p id="clicks">0 cookies</p>
 
 
 
@@ -17,21 +17,29 @@
   var increment = 1;
   var cookies = 0;
   var cost = 10;
+  var otherIncrement = 3
+
   function myFunction() {
     cookies += increment;
     document.getElementById("clicks").innerHTML=cookies + " cookies";
   }
 
   function otherOne() {
-    if(cookies >= 10) {
-      cookies -= 10;
+    if(cost >= 40) {
+
+  otherIncrement = 10;
+
+
+    }
+    if(cookies >=cost) {
+      cookies -=cost;
       increment += 1;
+      cost += otherIncrement;
       document.getElementById("clicks").innerHTML=cookies + " cookies";
-      document.getElementById("currentValue").value="test";
+      document.getElementById("currentValue()").value="increase clicking power by +1. costs: "+cost;
     }
     else {
       document.getElementById("clicks").innerHTML="you dont have enough cookies!";
-      cookies -= 1;
     }
   }
 </script>
