@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+  <button onclick="myFunction()">click me for more cookies</button>
+
+  <input type="button" value=cost id="currentValue()"></input>
+
+  <p id="clicks">0</p>
+
+
+
+
+  <script>
+  var increment = 1;
+  var cookies = 0;
+  var cost = 10;
+  function myFunction() {
+    cookies += increment;
+    document.getElementById("clicks").innerHTML=cookies + " cookies";
+  }
+
+  function otherOne() {
+    if(cookies >= 10) {
+      cookies -= 10;
+      increment += 1;
+      document.getElementById("clicks").innerHTML=cookies + " cookies";
+      document.getElementById("currentValue").value="test";
+    }
+    else {
+      document.getElementById("clicks").innerHTML="you dont have enough cookies!";
+      cookies -= 1;
+    }
+  }
+</script>
+
+</body>
+
+</html>
