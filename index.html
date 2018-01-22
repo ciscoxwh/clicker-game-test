@@ -4,17 +4,30 @@
 
 <body>
 
+  <title>clicker game</title>
+
   <style>
 
 body {background-color: powderblue;}
+
+div.relative {
+position: relative;
+top: 200px;
+font-family: "Times New Roman";
+
+}
 
   </style>
 
   <button onclick="myFunction()">click me for more cookies</button>
 
-  <input border-radius=12px type="button" value="+1 clicking power (10)" onclick="otherOne()" id="currentValue()"></input>
+  <input border-radius=12px type="button" value="+1 clicking power (costs: 10)" onclick="otherOne()" id="currentValue()"></input>
 
   <font color="red"><p color="green"id="clicks">0 cookies</p></font>
+
+<div class="relative">
+  <font color="blue"><p color="green"id="clicksAll">TOTAL CLICKS: 0</p></font>
+</div>
 
 
   <script>
@@ -22,14 +35,18 @@ body {background-color: powderblue;}
   var cookies = 0;
   var cost = 10;
   var otherIncrement = 3;
+  var allClicks = 0;
 
 
 
   function myFunction() {
 
     cookies += increment;
+    allClicks += 1
 
     document.getElementById("clicks").innerHTML=cookies + " cookies";
+
+    document.getElementById("clicksAll").innerHTML="TOTAL CLICKS: "+allClicks;
 
 }
 
@@ -58,7 +75,7 @@ body {background-color: powderblue;}
       increment += 1;
       cost += otherIncrement;
       document.getElementById("clicks").innerHTML=cookies + " cookies";
-      document.getElementById("currentValue()").value="increase clicking power by +1. costs: "+cost;
+      document.getElementById("currentValue()").value="+1 clicking power (costs: "+cost+")";
     }
     else {
       document.getElementById("clicks").innerHTML="you dont have enough cookies!";
